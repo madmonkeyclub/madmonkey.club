@@ -1,119 +1,86 @@
 ---
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Mad Monkey Club - Tech Leadership & Fractional CTO Services</title>
-		<meta name="description" content="Expert tech leadership consulting, fractional CTO services, and coaching for engineering teams and startup founders." />
-	</head>
-	<body class="bg-gray-50 text-gray-900">
-		<!-- Hero Section -->
-		<section class="min-h-screen flex items-center justify-center px-6">
-			<div class="max-w-4xl mx-auto text-center">
-				<h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-					Mad Monkey Club
-				</h1>
-				<p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-					Tech leadership consulting, fractional CTO services, and coaching for engineering teams and startup founders.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a href="#services" class="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors">
-						Explore Services
-					</a>
-					<a href="#contact" class="border border-black px-8 py-4 rounded-lg hover:bg-black hover:text-white transition-colors">
-						Get In Touch
-					</a>
-				</div>
-			</div>
-		</section>
+<BaseLayout 
+  title="Mad Monkey Club - Tech Leadership & Fractional CTO Services"
+  description="Expert tech leadership consulting, fractional CTO services, and coaching for engineering teams and startup founders."
+>
+  <Hero />
 
-		<!-- Services Section -->
-		<section id="services" class="py-20 px-6 bg-white">
-			<div class="max-w-6xl mx-auto">
-				<h2 class="text-4xl font-bold text-center mb-16">Services</h2>
-				<div class="grid md:grid-cols-3 gap-12">
-					<div class="text-center">
-						<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-white text-2xl">💼</span>
-						</div>
-						<h3 class="text-2xl font-semibold mb-4">Tech Leadership Consulting</h3>
-						<p class="text-gray-600">Strategic guidance for engineering teams, architecture decisions, and technical roadmaps.</p>
-					</div>
-					<div class="text-center">
-						<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-white text-2xl">⚡</span>
-						</div>
-						<h3 class="text-2xl font-semibold mb-4">Fractional CTO</h3>
-						<p class="text-gray-600">Part-time CTO services for startups and growing companies needing senior technical leadership.</p>
-					</div>
-					<div class="text-center">
-						<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-white text-2xl">🎯</span>
-						</div>
-						<h3 class="text-2xl font-semibold mb-4">Executive Coaching</h3>
-						<p class="text-gray-600">One-on-one coaching for engineering leaders and technical founders.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16">Services</h2>
+      <div class="grid md:grid-cols-3 gap-12">
+        <ServiceCard 
+          icon="💼"
+          title="Tech Leadership Consulting"
+          description="Strategic guidance for engineering teams, architecture decisions, and technical roadmaps."
+        />
+        <ServiceCard 
+          icon="⚡"
+          title="Fractional CTO"
+          description="Part-time CTO services for startups and growing companies needing senior technical leadership."
+        />
+        <ServiceCard 
+          icon="🎯"
+          title="Executive Coaching"
+          description="One-on-one coaching for engineering leaders and technical founders."
+        />
+      </div>
+    </div>
+  </section>
 
-		<!-- Projects Section -->
-		<section class="py-20 px-6 bg-gray-50">
-			<div class="max-w-6xl mx-auto">
-				<h2 class="text-4xl font-bold text-center mb-16">Projects</h2>
-				<div class="grid md:grid-cols-2 gap-12">
-					<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-						<h3 class="text-2xl font-semibold mb-4">Dreamweaver</h3>
-						<p class="text-gray-600 mb-6">AI-powered dream analysis and insight platform.</p>
-						<a href="https://dreamweaver.app" target="_blank" rel="noopener" class="text-black font-medium hover:underline">
-							Visit dreamweaver.app →
-						</a>
-					</div>
-					<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-						<h3 class="text-2xl font-semibold mb-4">Renw</h3>
-						<p class="text-gray-600 mb-6">Modern renewal and subscription management solution.</p>
-						<a href="https://renw.io" target="_blank" rel="noopener" class="text-black font-medium hover:underline">
-							Visit renw.io →
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
+  <!-- Projects Section -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <ProjectCard 
+          title="Dreamweaver"
+          description="AI-powered dream analysis and insight platform."
+          url="https://dreamweaver.app"
+        />
+        <ProjectCard 
+          title="Renw"
+          description="Modern renewal and subscription management solution."
+          url="https://renw.io"
+        />
+      </div>
+    </div>
+  </section>
 
-		<!-- About Section -->
-		<section class="py-20 px-6 bg-white">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-4xl font-bold mb-8">About</h2>
-				<p class="text-xl text-gray-600 mb-8 leading-relaxed">
-					Hi, I'm Xavier Fuentes. I help engineering teams and technical founders build better products, scale their organizations, and navigate complex technical challenges.
-				</p>
-				<a href="https://xavierfuentes.com" target="_blank" rel="noopener" class="text-black font-medium hover:underline text-lg">
-					Learn more at xavierfuentes.com →
-				</a>
-			</div>
-		</section>
+  <!-- About Section -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8">About</h2>
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+        Hi, I'm Xavier Fuentes. I help engineering teams and technical founders build better products, scale their organizations, and navigate complex technical challenges.
+      </p>
+      <a href="https://xavierfuentes.com" target="_blank" rel="noopener" class="text-black font-medium hover:underline text-lg">
+        Learn more at xavierfuentes.com →
+      </a>
+    </div>
+  </section>
 
-		<!-- Contact Section -->
-		<section id="contact" class="py-20 px-6 bg-black text-white">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-4xl font-bold mb-8">Ready to get started?</h2>
-				<p class="text-xl text-gray-300 mb-8">
-					Let's discuss how I can help your team achieve its technical goals.
-				</p>
-				<a href="mailto:hello@madmonkey.club" class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors inline-block">
-					Get In Touch
-				</a>
-			</div>
-		</section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 bg-black text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8">Ready to get started?</h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Let's discuss how I can help your team achieve its technical goals.
+      </p>
+      <a href="mailto:hello@madmonkey.club" class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors inline-block">
+        Get In Touch
+      </a>
+    </div>
+  </section>
 
-		<!-- Footer -->
-		<footer class="py-8 px-6 bg-gray-900 text-gray-400 text-center">
-			<p>&copy; 2024 Mad Monkey Club. All rights reserved.</p>
-		</footer>
-	</body>
-</html>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,33 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies (handled by multi-stage build)
+node_modules
+
+# Build artifacts
+dist
+.astro
+
+# Development files
+.env*
+*.log
+npm-debug.log*
+
+# Editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+CLAUDE.md
+
+# Docker files
+Dockerfile
+.dockerignore
